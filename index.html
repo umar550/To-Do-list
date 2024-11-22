@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<style>
+/* .todo{
+    border: 1px solid black;
+    width: 500px;
+    height: 500px; 
+} */
+</style>
+<body>
+    <div class="todo">
+        <h2>My To Do List</h2>
+        <label for="tasks"></label>
+        <input type="text" name="tasks" id="todoInput" placeholder="Enter a new task">
+        <button id="add-task" onclick="add()">Add</button>
+        <button id="remove-task" onclick="remove()">Remove</button>
+        <ul id="task-list"></ul>
+    </div>
+    
+</body>
+<script>
+    let todo = [];
+    let ul = document.getElementById("task-list");
+    let input = document.querySelector("#todoInput");
+//to add trask
+    function add() {
+       
+       
+        todo.push(input.value);
+        console.log(todo);
+
+        ul.innerHTML = "";
+
+        for (let i = 0;i < todo.length; i++) {
+            let li = document.createElement("li");
+            li.textContent = todo[i];
+            ul.appendChild(li);
+           
+            
+        }
+        
+    }
+
+//to remove task
+    function remove() {
+       
+       
+        todo.pop(input.value);
+        console.log(todo);
+
+        ul.innerHTML = "";
+
+        for (let i = 0;i < todo.length; i++) {
+            let li = document.createElement("li");
+            li.textContent = todo[i];
+            ul.appendChild(li);
+           
+            
+        }
+        
+    }
+</script>
+</html>
